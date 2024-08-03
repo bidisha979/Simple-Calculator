@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bidisha's Calculator</title>
+    <style>
+        body {
+            background-color: cadetblue;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .calculator {
+            width: 90%;
+            max-width: 400px;
+            background-color: rgb(40, 58, 58);
+            margin: 20px auto;
+            padding: 10px;
+            border-radius: 30px;
+            border: 2px solid black;
+        }
+
+        input {
+            height: 50px;
+            width: 20%;
+            max-width: 60px;
+            border-radius: 10px;
+            margin: 5px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 18px;
+            box-shadow: -8px -8px 15px black, 5px 5px 15px black;
+            cursor: pointer;
+            color: white;
+            border: none;
+            background-color: rgb(75, 75, 75); /* Default background for buttons */
+        }
+
+        .display {
+            height: 60px;
+            width: 100%;
+            max-width: 300px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            background-color: rgb(108, 108, 90);
+            color: black;
+            border-radius: 10px;
+            border: none;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .op {
+            background-color: grey;
+        }
+
+        .other {
+            background-color: palevioletred;
+        }
+
+        @media screen and (max-width: 600px) {
+            input {
+                width: 22%;
+            }
+            .display {
+                font-size: 20px;
+                height: 50px;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            input {
+                width: 24%;
+                height: 40px;
+                font-size: 16px;
+            }
+            .display {
+                font-size: 18px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Bidisha's Calculator</h1>
+    <div class="calculator">
+        <form>
+            <div>
+                <input class="display" name="display" type="text">
+            </div>
+
+            <div>
+                <input class="other" type="button" value="AC" onclick="display.value = ''">
+                <input class="other" type="button" value="DEL" onclick="display.value = display.value.toString().slice(0, -1)">
+                <input class="op" type="button" value="=" onclick="display.value = eval(display.value)">
+                <input class="op" type="button" value="/" onclick="display.value += '/'">
+            </div>
+
+            <div>
+                <input class="op" type="button" value="7" onclick="display.value += '7'">
+                <input class="op" type="button" value="8" onclick="display.value += '8'">
+                <input class="op" type="button" value="9" onclick="display.value += '9'">
+                <input class="op" type="button" value="*" onclick="display.value += '*'">
+            </div>
+
+            <div>
+                <input class="op" type="button" value="4" onclick="display.value += '4'">
+                <input class="op" type="button" value="5" onclick="display.value += '5'">
+                <input class="op" type="button" value="6" onclick="display.value += '6'">
+                <input class="op" type="button" value="-" onclick="display.value += '-'">
+            </div>
+
+            <div>
+                <input class="op" type="button" value="1" onclick="display.value += '1'">
+                <input class="op" type="button" value="2" onclick="display.value += '2'">
+                <input class="op" type="button" value="3" onclick="display.value += '3'">
+                <input class="op" type="button" value="+" onclick="display.value += '+'">
+            </div>
+
+            <div>
+                <input class="op" type="button" value="." onclick="display.value += '.'">
+                <input class="op" type="button" value="0" onclick="display.value += '0'">
+                <input class="op" type="button" value="(" onclick="display.value += '('">
+                <input class="op" type="button" value=")" onclick="display.value += ')'">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
